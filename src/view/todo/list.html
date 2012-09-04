@@ -1,0 +1,24 @@
+<h2>Chicago Boss MongoDB App: ToDo</h2>
+
+{% if errors %}
+<ol>
+{% for error in errors %}
+<li><font color=red>{{ error }}</font>
+{% endfor %}
+</ol>
+{% endif %}
+
+<ul>
+{% if todos %}
+  {% for todo in todos %}
+  <li>{{ todo.todo }}({{ todo.created }})</li>
+  {% endfor  %}
+{% else %}
+  <li>Nothing to do.</li>
+{% endif %}
+</ul>
+<h4>Add a todo:</h4>
+<form method='POST'>
+<input id="todo" name="todo" />
+<submit />
+</form>

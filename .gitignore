@@ -1,0 +1,5 @@
+ebin/
+log/
+erl_crash.dump
+# Keeping boss.config since this will deploy with theMob 
+#boss.config
