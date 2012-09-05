@@ -10,7 +10,8 @@ list('POST', []) ->
     Create = Todo:save(),
     case Create of
         {ok, NewTodo} ->
-            {action_other, [{controller, "todo"}, {action, "list"} ]}; 
+            Todos = boss_db:find(mo_todo, []),
+            {ok, [{todos, Todos}]};
         {error, [ErrorMessages]} ->
             {ok, [{errors, ErrorMessages}]}
     end.
