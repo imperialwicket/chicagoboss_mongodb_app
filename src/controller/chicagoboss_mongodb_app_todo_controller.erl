@@ -10,7 +10,7 @@ list('POST', []) ->
     Create = Todo:save(),
     case Create of
         {ok, NewTodo} ->
-            {ok, []};
+            {action_other, [{controller, "todo"}, {action, "list"} ]}; 
         {error, [ErrorMessages]} ->
             {ok, [{errors, ErrorMessages}]}
     end.
